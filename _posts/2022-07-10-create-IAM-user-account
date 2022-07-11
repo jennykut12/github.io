@@ -6,14 +6,14 @@ categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
 ---
 
-##How to create an individual IAM user account 
+## How to create an individual IAM user account 
 
 You can use this user account to log in throughout
 the rest of the course.
 
 Remember that the root user logs in with the email address that we used to create the account. Now, the root user has full permissions to the account, and those are totally unrestricted. And in fact, it's very difficult, if not impossible, to remove permissions from the root user accounts. And that's why it's dangerous to keep logging in with the root user account.
 
-###How create to an IAM user
+### How create to an IAM user
 
 The user will have a friendly name like John or Neal or whatever you want to call your users, and needs to supply the account ID or the alias at log in.
 
@@ -30,7 +30,7 @@ Now, programmatic access means that you're using certain credentials called an a
 
 5. Click on next. And now we come to permissions.
 
-###How do we assign permissions to users?
+### How do we assign permissions to users?
 
 Well, remember we can attach policies directly to users, which is an option up here, and we have a whole load of policies that are predefined.
 
