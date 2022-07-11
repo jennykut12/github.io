@@ -32,12 +32,12 @@ Domain4: Domain four is design cost-optimized architectures
 
     
 
-##Overview of the IAM service, the Identity and Access Management Service.
+### Overview of the IAM service, the Identity and Access Management Service.
 
 IAM is the identity and access management service, and it's a way that we can authenticate and be authorized to access services on AWS.
 So let's say we're connecting to an AWS service via either the management console, the command line interface or the API. We'll connect to AWS IAM and we can then authenticate and all principles must be authenticated to send requests.
 
-What is a principle?
+### What is a principle?
 
 A principle is a person or an application that can make a request for an action or an operation on a resource. Now, actions and operations are both where we're using the API to interact with an AWS service.
 We have users roles, federated users and applications.
