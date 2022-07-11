@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Create IAM User Account
-subtitle: Create an individual IAM user account that we can log in with throughout
-the rest of the course.
+subtitle: How to create an individual IAM user account
 categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
 ---
 
+##How to create an individual IAM user account 
 
+You can use this user account to log in throughout
+the rest of the course.
 
 Remember that the root user logs in with the email address that we used to create the account. Now, the root user has full permissions to the account, and those are totally unrestricted. And in fact, it's very difficult, if not impossible, to remove permissions from the root user accounts. And that's why it's dangerous to keep logging in with the root user account.
 
