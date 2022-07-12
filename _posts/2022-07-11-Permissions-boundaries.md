@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Permissions Boundaries
-subtitle: explore the authentication options in AWS and Multi-Factor Authentication
+subtitle: Read me
 categories: Markdown
-tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
+tags: [Markdown, journaling, blog, AWS, PermissionsBoundaries]
 ---
 
 ## Permissions Boundaries

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Identity Based Policies and Resource Based Policies.
-subtitle: explore the authentication options in AWS and Multi-Factor Authentication
+subtitle: Read me
 categories: Markdown
-tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
+tags: [Markdown, journaling, blog, AWS, Identity,Resources, policies]
 ---
 
 ## Identity Based Policies and Resource Based Policies.

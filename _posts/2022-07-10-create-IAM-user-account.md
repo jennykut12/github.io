@@ -3,7 +3,7 @@ layout: post
 title: Create IAM User Account
 subtitle: How to create an individual IAM user account
 categories: Markdown
-tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
+tags: [Markdown, journaling, blog, AWS, IAM, IAMuser, UserAccount, CreateIAMUserAccount]
 ---
 
 ## How to create an individual IAM user account 

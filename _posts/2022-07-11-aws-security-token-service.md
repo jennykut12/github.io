@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The AWS Security Token Service(STS)
-subtitle: explore the authentication options in AWS and Multi-Factor Authentication
+subtitle: STS
 categories: Markdown
-tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
+tags: [Markdown, journaling, blog, AWS, IAM, STS, Security, AWSSecurityTokenService]
 ---
 
 ## The AWS Security Token Service(STS).
