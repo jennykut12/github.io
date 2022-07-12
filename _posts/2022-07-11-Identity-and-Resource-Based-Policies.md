@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Possible Exam Questions
+title: Identity Based Policies and Resource Based Policies.
 subtitle: explore the authentication options in AWS and Multi-Factor Authentication
 categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Possible Exam Questions
+title: Permissions Boundaries
 subtitle: explore the authentication options in AWS and Multi-Factor Authentication
 categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]

@@ -50,4 +50,4 @@ You've now got MFA enabled for your accounts, and you can see that we have an AR
 
 ### Set up for Root User Account 
 
-See this webpage for directions [Click Here] (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root)
+See this webpage for directions [Click Here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root)
