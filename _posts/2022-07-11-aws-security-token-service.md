@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IAm-authentication-and-MFA
+title: The AWS Security Token Service(STS)
 subtitle: explore the authentication options in AWS and Multi-Factor Authentication
 categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]

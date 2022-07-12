@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IAm-authentication-and-MFA
+title: How to explore the authentication options in AWS and MFA
 subtitle: explore the authentication options in AWS and Multi-Factor Authentication
 categories: Markdown
 tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
