@@ -18,4 +18,4 @@ The temporary credentials include an access key and a secret access key. They ha
 Temporary credentials are used in several situations that includes Identity Federation, delegation, cross account access, and IAM roles.
 STS is used in a lot of the operations that we're going to be looking into in more detail. So it's important to understand how it works. And hopefully, you've now got a good understanding.
 
-![datacamp certification](/assets/images/AWS%20Security%20Token%20Service.pdf)
+![datacamp certification](/assets/images/STS.jpg)

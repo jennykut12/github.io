@@ -16,7 +16,7 @@ Firstly, we have something called an inline policy. Inline policies have a one t
 
 We then have what are called managed policies. Manage policies can be either AWS managed or customer managed. As the name suggests, AWS managed are created and managed by AWS and customer managed are created and managed by you. So you can't modify an IWC manage policy. But you can use those policies in your account so we can attach a manage policy to multiple entities so we can attach the policy to a user, a group and a role at the same time if we want to and then known as stand-alone policies for that reason, because you can attach them to multiple identities in your account.
 
-![datacamp certification](/assets/images/Identity%20Based%20Policies.pdf)
+![datacamp certification](/assets/images/Identity%20IAM%20policy.jpg)
 
 Next, we have resource based policies, so these are the JSON policy documents that you attach to a resource such as an S3 bucket or a Dynamo DB table, for example. And there are several different services to which you can attach a resource based policy.So let's say we've got an S3 bucket and we've got Paul on the left hand side. Here are user accounts, and Paul wants to place an object in the buckets. So in this case, we could apply a permissions policy to the the bucket itself. So a resource based policy. And in that policy, we can define the principle. So if we look at how this policy is written, it's a bit different to the policies that are applied to identity based policies. In this case, you get the principle.
 
@@ -26,4 +26,4 @@ The resource based policy will grant the specified principle the permission to p
 
 Now, a trust policy is also an example of a resource based policy, whereas the permissions policy is an example of an identity based policy.
 
-![datacamp certification](/assets/images/Resourse%20Based%20Policies.pdf)
+![datacamp certification](/assets/images/Resource%20policy.jpg)

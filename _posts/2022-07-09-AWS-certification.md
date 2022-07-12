@@ -37,7 +37,9 @@ Domain4: Domain four is design cost-optimized architectures
 IAM is the identity and access management service, and it's a way that we can authenticate and be authorized to access services on AWS.
 So let's say we're connecting to an AWS service via either the management console, the command line interface or the API. We'll connect to AWS IAM and we can then authenticate and all principles must be authenticated to send requests.
 
-![datacamp certification](/assets/images/AWS-IAM.pdf)
+![datacamp certification](/assets/images/Account%20overview.jpg)
+
+![datacamp certification](/assets/images/Account%20overview2.jpg)
 
 ### What is a principle?
 
@@ -47,7 +49,7 @@ We then have a couple of types of policy so we can assign permissions to users a
 
 We have identity based policies and resource based policies, and these determine whether to authorize the request, whether to allow or to deny the request to the resource. Once you've got an allow or deny, assuming as a deny in this case, you're then able to run an action against a resource.
 
-![datacamp certification](/assets/images/IAM-Policies.pdf)
+![datacamp certification](/assets/images/IAM%20policy.jpg)
 
 Note that everything in AWS is an API call. So when you're trying to launch an issue to instance, you're basically executing the run instances command.
 
@@ -57,6 +59,6 @@ So whatever resource you're interacting with in AWS, an API action is actually b
 
  Quick overview of what this service does.
 
- ![datacamp certification](/assets/images/IAM-Gruop.pdf)
- ![datacamp certification](/assets/images/IAM-Users.pdf)
-  ![datacamp certification](/assets/images/User-Groups-Roles-and-policies.pdf)
+ ![datacamp certification](/assets/images/IAM%20group.jpg)
+ ![datacamp certification](/assets/images/IAM%20user.jpg)
+  ![datacamp certification](/assets/images/User%2C%20groups%20%2Croles%20and%20policy.jpg)

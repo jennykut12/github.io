@@ -14,7 +14,7 @@ With our user account called John. John wants to log into AWS. He does so throug
 
 The other methods of accessing AWS are the CLI and the API and the SDK, which also leverages the API. When you access AWS by one of these methods, you use something called an access key ID and a secret access key. Which looks like bit more ugly, not as user friendly as a username and password. But these are then used in your code to authenticate to AWS and through to the API so that you can do whatever you want to do in AWS. These are known as access keys, and they're used for programmatic access. 
 
-![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA.pdf)
+![datacamp certification](/assets/images/IAM%20authentication%20method.jpg)
 
 ### What is Multi-Factor Authentication or MFA?
 
@@ -28,9 +28,9 @@ So, in AWS, we use something you know, your IAM user account and a password and 
 
 Now, the physical tokens can be purchased from third parties. So when you go into the console, if you choose the option to actually use a physical token, you can see it there.You can see an option to click and purchase, but it will take you off to another website like Amazon.com.
 
-![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA%202.pdf)
+![datacamp certification](/assets/images/Multifactor%20authentication.jpg)
 
-![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA%203.pdf)
+![datacamp certification](/assets/images/Multifactor.jpg)
 
 ### So remember that for the exam. The physical tokens come from third parties.
 
@@ -47,3 +47,7 @@ Now, the physical tokens can be purchased from third parties. So when you go int
 And that's it.
 
 You've now got MFA enabled for your accounts, and you can see that we have an ARN for the virtual
+
+### Set up for Root User Account 
+
+See this webpage for directions [Click Here] (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root)
