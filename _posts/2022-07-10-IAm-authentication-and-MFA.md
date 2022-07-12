@@ -14,6 +14,8 @@ With our user account called John. John wants to log into AWS. He does so throug
 
 The other methods of accessing AWS are the CLI and the API and the SDK, which also leverages the API. When you access AWS by one of these methods, you use something called an access key ID and a secret access key. Which looks like bit more ugly, not as user friendly as a username and password. But these are then used in your code to authenticate to AWS and through to the API so that you can do whatever you want to do in AWS. These are known as access keys, and they're used for programmatic access. 
 
+![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA.pdf)
+
 ### What is Multi-Factor Authentication or MFA?
 
  In IT security, we often talk about having different factors of authentication, and authentication is just proving who you are. So a way that you can do that is through something you know, and something you know is a password. If you log in to any kind of IT service using a username and password, the username is something which multiple people might know, but the password is something that you alone should know. So that's the secret, and that's the thing that proves that you are who you say you are.
@@ -25,6 +27,10 @@ Lastly, there's something you are. This is biometrics like fingerprints or retin
 So, in AWS, we use something you know, your IAM user account and a password and then something you have. And that's either a virtual MFA device such as Google Authenticator on your mobile phone or a physical MFA device, which is an actual physical token which cost money, whereas Google Authenticator is completely free.
 
 Now, the physical tokens can be purchased from third parties. So when you go into the console, if you choose the option to actually use a physical token, you can see it there.You can see an option to click and purchase, but it will take you off to another website like Amazon.com.
+
+![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA%202.pdf)
+
+![datacamp certification](/assets/images/IAM%20Authentication%20and%20MFA%203.pdf)
 
 ### So remember that for the exam. The physical tokens come from third parties.
 

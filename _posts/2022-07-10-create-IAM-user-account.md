@@ -57,3 +57,4 @@ And so now, I'm signed in as Neal, which you can see up in the top right hand si
 
 We're now able to log in with our individual user account and have full administrative permissions over the account. So we no longer need to log in as root.
 
+![datacamp certification](/assets/images/Create%20IAM%20User%20Account.pdf)
