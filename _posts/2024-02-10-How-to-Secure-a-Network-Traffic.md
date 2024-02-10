@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Possible Exam Questions
-subtitle: explore the authentication options in AWS and Multi-Factor Authentication
-categories: Markdown
-tags: [Markdown, journaling, blog, AWS, IAM,IAMuser, IAMuseraccount]
+title: How to Secure a Network Traffic
+subtitle: Read Me
+categories: Azure Network
+tags: [Azure, VisualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG]
 ---
 
 ## How to Secure a Network Traffic
