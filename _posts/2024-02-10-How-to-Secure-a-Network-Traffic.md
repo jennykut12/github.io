@@ -41,7 +41,7 @@ I want to create a virtual machine.
 14. On the VM, scroll to “Networking”, and click “Network Setting”
 15. Copy the network interface, because you will need it.
  
- ![datacamp certification](/assets/images/VM.jpeg)
+ ![datacamp certification](/assets/images/securedVM/VM.jpeg)
 
 ### Create a network security group
 
@@ -50,12 +50,24 @@ I want to create a virtual machine.
 4. Click on “Create ” and fill in the details.
 5. Click “review and create” and click “create”
 6. When its completed click “go to resource”
-![datacamp certification](/assets/images/NSG.jpeg)
+
+ ![datacamp certification](/assets/images/securedVM/NSG.jpeg)
+
 7. On the NSG page go scroll the “Network interface” and click on it
+
+ ![datacamp certification](/assets/images/securedVM/networkinterface.jpeg)
+
 8. Next, click “associate” on the tab
-![datacamp certification](/assets/images/networkinterface.jpeg)
+
+ ![datacamp certification](/assets/images/securedVM/associatenetworkinterface.jpeg)
+
 9. Click the “Network interface association” dropdown arrow
+
+ ![datacamp certification](/assets/images/securedVM/associatenetworkinterface2.jpeg)
+
 10. Select the network interface and click “OK”
+
+ ![datacamp certification](/assets/images/securedVM/associatenetworkinterfacesucessful.jpeg)
 
 
 ### How to allow an RDP traffic to the virtual machine by configuring an inbound security port rule
