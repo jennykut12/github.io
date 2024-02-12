@@ -40,7 +40,8 @@ I want to create a virtual machine.
 13. When deployment complete, scroll down and “Go to resource”
 14. On the VM, scroll to “Networking”, and click “Network Setting”
 15. Copy the network interface, because you will need it.
-
+ 
+ ![datacamp certification](/assets//images//VM.jpeg)
 
 ### Create a network security group
 
