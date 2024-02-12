@@ -76,28 +76,46 @@ By default NSG does not allow RDP. So we need to configure an inbound security r
 
 1. Go back to your already created virtual machine and click on “Network Setting”
 2. Select the “create port rules” and choose “inbound port rule”
+
+ ![datacamp certification](/assets/images/securedVM/createinboundrule.jpeg)
+
 3. Input a “Destination port ranges” and a “priority”
 4. Select “TCP”
 5. Add a “name”
 6. Click ”Add“
+
+ ![datacamp certification](/assets/images/securedVM/sucessinboundrule.jpeg)
 
 How to connect to RDP
 
 1. Go to the “Overview” of the VM
 2. Click on “Connect”
 3. Click on “Download RDP File”
+
+ ![datacamp certification](/assets/images/securedVM/connectrdp.jpeg)
+
 4. Download, input details and continue
 5. There you go, your VM is ready.
+
+ ![datacamp certification](/assets/images/securedVM/displayVM.jpeg)
 
 
 ### Configure an outbound security port rule to deny internet access
 
 1. Go to your VM and click on “Network Setting”
 2. Select the “create port rules” and choose “outbound port rule”
+
+ ![datacamp certification](/assets/images/securedVM/createoutboundrule.jpeg)
+
 3. On destination input, “Service Tag”
 4. On “Destination port ranges” put “*” which means all ports
 5. On ”Protocol” select “TCP”
 6. On “Action” select “Deny”
 7. Input a high Priority
+
+ ![datacamp certification](/assets/images/securedVM/outboundruleform.jpeg)
+
 8. Add name and click on “Add”
 9. Return to your RDP session and try to open a website , you will notice its not opening, because access has been denied.
+
+ ![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
