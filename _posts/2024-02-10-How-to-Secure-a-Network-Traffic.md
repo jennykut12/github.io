@@ -41,7 +41,7 @@ I want to create a virtual machine.
 14. On the VM, scroll to “Networking”, and click “Network Setting”
 15. Copy the network interface, because you will need it.
  
- ![datacamp certification](/assets//images//VM.jpeg)
+ ![datacamp certification](/assets/images/VM.jpeg)
 
 ### Create a network security group
 
@@ -50,8 +50,10 @@ I want to create a virtual machine.
 4. Click on “Create ” and fill in the details.
 5. Click “review and create” and click “create”
 6. When its completed click “go to resource”
+![datacamp certification](/assets/images/NSG.jpeg)
 7. On the NSG page go scroll the “Network interface” and click on it
 8. Next, click “associate” on the tab
+![datacamp certification](/assets/images/networkinterface.jpeg)
 9. Click the “Network interface association” dropdown arrow
 10. Select the network interface and click “OK”
 
