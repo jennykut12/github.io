@@ -3,10 +3,13 @@ layout: post
 title: How to Secure a Network Traffic
 subtitle: Read Me
 categories: Azure Network
-tags: [Azure, VisualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG]
+tags: [Azure, VirtualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG]
 ---
 
 ## How to Secure a Network Traffic
+
+
+### Introduction
 
 I wants to secure a Network Traffic to ensure that access to virtual machines is restricted. To do this, I need to:
 * 		Create and configure network security groups.
