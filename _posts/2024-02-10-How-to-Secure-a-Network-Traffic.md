@@ -8,6 +8,11 @@ tags: [Azure, VisualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH
 
 ## How to Secure a Network Traffic
 
+I wants to secure a Network Traffic to ensure that access to virtual machines is restricted. To do this, I need to:
+* 		Create and configure network security groups.
+* 		Associate network security groups to virtual machines.
+* 		Deny and allow access to the virtual machines by using network security groups.
+
 ### To create a secure network, there are 4 main steps we will take:
 
 - Create a virtual machine.
