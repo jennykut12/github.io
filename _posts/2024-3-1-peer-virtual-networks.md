@@ -236,7 +236,7 @@ az network nic show-effective-route-table \
 The output table shows the effective routes for the VM's network interface. For SalesVMVMNic, you should have a route to 10.2.0.0/16 with Next Hop Type of VNetPeering. This is the network route for the peering connection from SalesVNet to MarketingVNet.
 
 Output
-![datacamp certification](/assets/vnassets/ipaddress.jpeg)
+![datacamp certification](/assets/vnassets/vmnic.jpeg)
 
 Run the following command to look at the routes for MarketingVM:
 Azure CLI
