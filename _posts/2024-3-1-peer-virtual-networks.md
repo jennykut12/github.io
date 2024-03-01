@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Peer Virtual Networks 
+title: How to Peer Virtual Networks using the Hub and Spoke Method with Azure CLI
 subtitle: Read Me
 categories: Azure Network
 tags: [Azure, VirtualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG, vn, ]
