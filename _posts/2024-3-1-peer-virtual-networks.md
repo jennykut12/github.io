@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Peer Virtual Networks using the Hub and Spoke Method with Azure CLI
+title: How to Peer Virtual Networks 
 subtitle: Read Me
 categories: Azure Network
 tags: [Azure, VirtualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG, vn, ]
@@ -66,7 +66,7 @@ az network vnet create \
  ![datacamp certification](/assets/vnassets//rVN.jpeg)
 
 Here are all the VN created
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/Virtual%20networks.jpeg)
 
 ### Create  some Ubuntu virtual machines (VMs) in each of the virtual networks
 
@@ -132,7 +132,7 @@ watch -d -n 5 "az vm list \
 
 ProvisioningState of Succeeded and a PowerState of VM running indicates a successful deployment for the VM.
 When your VMs are running, you're ready to move on. Press Ctrl-c to stop the command and continue on with the exe
-![datacamp certification](/assets/vnassets//Virtual%20networks.jpeg)
+![datacamp certification](/assets/vnassets/Virtual%20machines.jpeg)
 
 
 ### Configure virtual network peering connections by using Azure CLI commands
@@ -217,7 +217,7 @@ az network vnet peering list \
     --vnet-name MarketingVNet \
     --query "[].{Name:name, Resource:resourceGroup, PeeringState:peeringState, AllowVnetAccess:allowVirtualNetworkAccess}"\
     --output table
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/statusvn.jpeg)
 
 
 #### Check effective routes
@@ -236,7 +236,7 @@ az network nic show-effective-route-table \
 The output table shows the effective routes for the VM's network interface. For SalesVMVMNic, you should have a route to 10.2.0.0/16 with Next Hop Type of VNetPeering. This is the network route for the peering connection from SalesVNet to MarketingVNet.
 
 Output
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/ipaddress.jpeg)
 
 Run the following command to look at the routes for MarketingVM:
 Azure CLI
@@ -250,7 +250,7 @@ az network nic show-effective-route-table \
 The output table shows the effective routes for the VM's network interface. For MarketingVMVMNic, you should have a route to 10.1.0.0/16 with a next hop type of VNetPeering and a route to 10.3.0.0/16 with a next hop type of VNetGlobalPeering. These are the network routes for the peering connection from MarketingVNet to SalesVNet and from MarketingVNet to ResearchVNet.
 
 #### Output
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/mvmnic.jpeg)
 
 Run the following command to look at the routes for ResearchVM:
 Azure CLI
@@ -263,7 +263,7 @@ az network nic show-effective-route-table \
 
 The output table shows the effective routes for the VM's network interface. For ResearchVMVMNic, you should have a route to 10.2.0.0/16 with a next hop type of VNetGlobalPeering. This is the network route for the peering connection from ResearchVNet to MarketingVNet. 
 Output
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets//rvmnic.jpeg)
 
 Now that your peering connections are configured, let's take a look at how this affects the communication between VMs.
 
@@ -284,7 +284,7 @@ az vm list \
 
 Record the output. You'll need the IP addresses for the exercises in this unit.
 
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/ipaddress.jpeg)
 
 #### Test connections from SalesVM
 
@@ -296,7 +296,7 @@ Bash
 ssh -o StrictHostKeyChecking=no azureuser@<SalesVM public IP>
 
 Sign in with the password that you used to create the VM. The prompt now shows that you're signed in to SalesVM.
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets//svmip.jpeg)
 
 In Cloud Shell, run the following command, using SSH to connect to the private IP address of MarketingVM. In the command, replace <MarketingVM private IP> with this VM's private IP address.
 Bash
@@ -306,7 +306,7 @@ ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM private IP>
 
 The connection attempt should succeed because of the peering connection between the SalesVNet and MarketingVNet virtual networks.
 Sign in by using the password you used to create the VM.
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets//svmiptomvmip.jpeg)
 
 Enter exit to close this SSH session and return to the SalesVM prompt.
 In Cloud Shell, run the following command, using SSH to connect to the private IP address of ResearchVM. In the command, replace <ResearchVM private IP> with this VM's private IP address.
@@ -316,7 +316,7 @@ Bash
 ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM private IP>
 
 The connection attempt should fail because there's no peering connection between the SalesVNet and ResearchVNet virtual networks. Up to 60 seconds might pass before the connection attempt times out. To force the attempt to stop, use Ctrl+C.
-![datacamp certification](/assets/images/securedVM/deniedrdp.jpeg)
+![datacamp certification](/assets/vnassets/svmiptorvmip.jpeg)
 Enter exit to close the SSH session and return to Cloud Shell.
 
 
