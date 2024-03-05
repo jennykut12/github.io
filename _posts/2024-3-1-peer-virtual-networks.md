@@ -30,6 +30,7 @@ In Cloud Shell, run the following command to create the virtual network and subn
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet create \
     --resource-group [ resource group name] \
     --name SalesVNet \
@@ -37,6 +38,7 @@ az network vnet create \
     --subnet-name Apps \
     --subnet-prefixes 10.1.1.0/24 \
     --location northeurope
+```
 ![datacamp certification](/assets/vnassets/sVN.jpeg)
 
 Run the following command to create the virtual network and subnet for the Marketing systems:
@@ -242,7 +244,7 @@ Run the following command to look at the routes for MarketingVM:
 Azure CLI
 
 ##### Copy
-az network nic show-effective-route-table \
+ az network nic show-effective-route-table \
     --resource-group [ resource group name] \
     --name MarketingVMVMNic \
     --output table
