@@ -45,6 +45,7 @@ Run the following command to create the virtual network and subnet for the Mark
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet create \
     --resource-group [ resource group name] \
     --name MarketingVNet \
@@ -52,12 +53,14 @@ az network vnet create \
     --subnet-name Apps \
     --subnet-prefixes 10.2.1.0/24 \
     --location northeurope
+```
 ![datacamp certification](/assets/vnassets//mVN.jpeg)
 
 Run the following command to create the virtual network and subnet for the Research systems:
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet create \
     --resource-group [ resource group name] \
     --name ResearchVNet \
@@ -65,6 +68,7 @@ az network vnet create \
     --subnet-name Data \
     --subnet-prefixes 10.3.1.0/24 \
     --location westeurope
+```
  ![datacamp certification](/assets/vnassets//rVN.jpeg)
 
 Here are all the VN created
@@ -76,6 +80,7 @@ In Cloud Shell, run the following command, replacing <password> with a passwor
 Azure CLI
 
 ##### Copy
+```bash 
 az vm create \
     --resource-group [ resource group name] \
     --no-wait \
@@ -86,6 +91,7 @@ az vm create \
     --image Ubuntu2204 \
     --admin-username azureuser \
     --admin-password <password>
+```
 ##### Note
 The --no-wait parameter in this command lets you continue working in Cloud Shell while the VM is building. 
 
@@ -94,6 +100,7 @@ Run the following command, replacing <password> with a password that meets the
 Azure CLI
 
 ##### Copy
+```bash 
 az vm create \
     --resource-group [ resource group name] \
     --no-wait \
@@ -104,11 +111,13 @@ az vm create \
     --image Ubuntu2204 \
     --admin-username azureuser \
     --admin-password <password>
+```
 
 Run the following command, replacing <password> with a password that meets the requirements for Linux VMs, to create an Ubuntu VM in the Data subnet of ResearchVNet. Note this password for later use.
 Azure CLI
 
 ##### Copy
+```bash 
 az vm create \
     --resource-group [ resource group name] \
     --no-wait \
@@ -119,18 +128,20 @@ az vm create \
     --image Ubuntu2204 \
     --admin-username azureuser \
     --admin-password <password>
+``` 
 
 The VMs might take several minutes to reach a running state.
 To confirm that the VMs are running, run the following command. The Linux watch command is configured to refresh every five seconds.
 Bash
 
 ##### Copy
+```bash 
 watch -d -n 5 "az vm list \
     --resource-group [ resource group name] \
     --show-details \
     --query '[*].{Name:name, ProvisioningState:provisioningState, PowerState:powerState}' \
     --output table"
-
+```
 
 ProvisioningState of Succeeded and a PowerState of VM running indicates a successful deployment for the VM.
 When your VMs are running, you're ready to move on. Press Ctrl-c to stop the command and continue on with the exe
@@ -143,47 +154,54 @@ In Cloud Shell, run the following command to create the peering connection betwe
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering create \
     --name SalesVNet-To-MarketingVNet \
     --remote-vnet MarketingVNet \
     --resource-group [ resource group name] \
     --vnet-name SalesVNet \
     --allow-vnet-access
+```
 
 Run the following command to create a reciprocal connection from MarketingVNet to SalesVNet. This step completes the connection between these virtual networks.
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering create \
     --name MarketingVNet-To-SalesVNet \
     --remote-vnet SalesVNet \
     --resource-group [ resource group name] \
     --vnet-name MarketingVNet \
     --allow-vnet-access
+```
 
 Now that you have connections between Sales and Marketing, create connections between Marketing and Research.
 In Cloud Shell, run the following command to create the peering connection between the MarketingVNet and ResearchVNet virtual networks:
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering create \
     --name MarketingVNet-To-ResearchVNet \
     --remote-vnet ResearchVNet \
     --resource-group [ resource group name] \
     --vnet-name MarketingVNet \
     --allow-vnet-access
+``` 
 
 Run the following command to create the reciprocal connection between ResearchVNet and MarketingVNet:
 Azure CLI
 
 ##### Copy
+```bash 
  az network vnet peering create \
     --name ResearchVNet-To-MarketingVNet \
     --remote-vnet MarketingVNet \
     --resource-group [ resource group name] \
     --vnet-name ResearchVNet \
     --allow-vnet-access
-
+``` 
 
 #### Check the virtual network peering connections
 
@@ -192,33 +210,40 @@ In Cloud Shell, run the following command to check the connection between Sales
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering list \
     --resource-group [ resource group name] \
     --vnet-name SalesVNet \
     --query "[].{Name:name, Resource:resourceGroup, PeeringState:peeringState, AllowVnetAccess:allowVirtualNetworkAccess}"\
     --output table
+``` 
 
 You've created only one connection from SalesVNet, so you get only one result. In the PeeringState column, make sure the status is Connected.
 Run the following command to check the peering connection between the ResearchVNet and MarketingVNet virtual networks:
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering list \
     --resource-group [ resource group name] \
     --vnet-name ResearchVNet \
     --query "[].{Name:name, Resource:resourceGroup, PeeringState:peeringState, AllowVnetAccess:allowVirtualNetworkAccess}"\
     --output table
+``` 
 
 Again, you've created only one connection from ResearchVNet, so you get only one result. In the PeeringState column, make sure the status is Connected.
 Run the following command to check the peering connections for the MarketingVNet virtual network.
 Azure CLI
 
 ##### Copy
+```bash 
 az network vnet peering list \
     --resource-group [ resource group name] \
     --vnet-name MarketingVNet \
     --query "[].{Name:name, Resource:resourceGroup, PeeringState:peeringState, AllowVnetAccess:allowVirtualNetworkAccess}"\
     --output table
+``` 
+
 ![datacamp certification](/assets/vnassets/statusvn.jpeg)
 
 
@@ -229,11 +254,12 @@ Run the following command to look at the routes that apply to the SalesVM netw
 Azure CLI
 
 ##### Copy
+```bash 
 az network nic show-effective-route-table \
     --resource-group [ resource group name] \
     --name SalesVMVMNic \
     --output table
-
+``` 
 
 The output table shows the effective routes for the VM's network interface. For SalesVMVMNic, you should have a route to 10.2.0.0/16 with Next Hop Type of VNetPeering. This is the network route for the peering connection from SalesVNet to MarketingVNet.
 
@@ -244,10 +270,12 @@ Run the following command to look at the routes for MarketingVM:
 Azure CLI
 
 ##### Copy
+```bash 
  az network nic show-effective-route-table \
     --resource-group [ resource group name] \
     --name MarketingVMVMNic \
     --output table
+``` 
 
 The output table shows the effective routes for the VM's network interface. For MarketingVMVMNic, you should have a route to 10.1.0.0/16 with a next hop type of VNetPeering and a route to 10.3.0.0/16 with a next hop type of VNetGlobalPeering. These are the network routes for the peering connection from MarketingVNet to SalesVNet and from MarketingVNet to ResearchVNet.
 
@@ -258,10 +286,12 @@ Run the following command to look at the routes for ResearchVM:
 Azure CLI
 
 ##### Copy
+```bash 
 az network nic show-effective-route-table \
     --resource-group [ resource group name] \
     --name ResearchVMVMNic \
     --output table
+``` 
 
 The output table shows the effective routes for the VM's network interface. For ResearchVMVMNic, you should have a route to 10.2.0.0/16 with a next hop type of VNetGlobalPeering. This is the network route for the peering connection from ResearchVNet to MarketingVNet. 
 Output
@@ -278,11 +308,13 @@ In Cloud Shell, run the following command to list the IP addresses you'll use to
 Azure CLI
 
 ##### Copy
+```bash 
 az vm list \
     --resource-group [ resource group name] \
     --query "[*].{Name:name, PrivateIP:privateIps, PublicIP:publicIps}" \
     --show-details \
     --output table
+``` 
 
 Record the output. You'll need the IP addresses for the exercises in this unit.
 
@@ -295,7 +327,7 @@ In Cloud Shell, run the following command, using SSH to connect to the public IP
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<SalesVM public IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<SalesVM public IP>]`
 
 Sign in with the password that you used to create the VM. The prompt now shows that you're signed in to SalesVM.
 ![datacamp certification](/assets/vnassets//svmip.jpeg)
@@ -304,7 +336,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM private IP>]`
 
 The connection attempt should succeed because of the peering connection between the SalesVNet and MarketingVNet virtual networks.
 Sign in by using the password you used to create the VM.
@@ -315,7 +347,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM private IP>]`
 
 The connection attempt should fail because there's no peering connection between the SalesVNet and ResearchVNet virtual networks. Up to 60 seconds might pass before the connection attempt times out. To force the attempt to stop, use Ctrl+C.
 ![datacamp certification](/assets/vnassets/svmiptorvmip.jpeg)
@@ -330,7 +362,7 @@ In Cloud Shell, run the following command, using SSH to connect to the public IP
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM public IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM public IP>]`
 
 Sign in by using the password that you used to create the VM. The prompt now shows that you're signed in to ResearchVM.
 
@@ -339,7 +371,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM private IP>]`
 
 The connection attempt should succeed because of the peering connection between the ResearchVNet and MarketingVNet virtual networks.
 Sign in by using the password you used to create the VM.
@@ -350,7 +382,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<SalesVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<SalesVM private IP>]`
 
 The connection attempt should fail because there's no peering connection between the ResearchVNet and SalesVNet virtual networks. Up to 60 seconds might pass before the connection attempt times out. To force the attempt to stop, use Ctrl+C.
 Enter exit to close the SSH session and return to Cloud Shell.
@@ -364,7 +396,7 @@ In Cloud Shell, run the following command, using SSH to connect to the public IP
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM public IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<MarketingVM public IP>]`
 
 Sign in by using the password that you used to create the VM. The prompt shows that you're signed in to MarketingVM.
 
@@ -373,7 +405,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<ResearchVM private IP>]`
 
 The connection attempt should succeed because of the peering connection between the MarketingVNet and ResearchVNet virtual networks.
 Sign in by using the password you used to create the VM.
@@ -384,7 +416,7 @@ In Cloud Shell, run the following command, using SSH to connect to the private I
 Bash
 
 ##### Copy
-ssh -o StrictHostKeyChecking=no azureuser@<SalesVM private IP>
+`[ssh -o StrictHostKeyChecking=no azureuser@<SalesVM private IP>]`
 
 The connection attempt should also succeed because there is a peering connection between the MarketingVNet and SalesVNet virtual networks. 
 
