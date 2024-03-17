@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Secure a Network Traffic
+title: How to setup RDP on an Azure VM
 subtitle: Read Me
 categories: Azure Network
 tags: [Azure, VirtualMachines, blog, vm, NetworkSecurityGroup,IPAddress, RDP, SSH, NSG]
